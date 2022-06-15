@@ -1,0 +1,15 @@
+C:\Users\ZilasJ\source\repos\DVI\TestProject\bin\Debug\TestProject.exe.config
+C:\Users\ZilasJ\source\repos\DVI\TestProject\bin\Debug\TestProject.exe
+C:\Users\ZilasJ\source\repos\DVI\TestProject\bin\Debug\TestProject.pdb
+C:\Users\ZilasJ\source\repos\DVI\TestProject\obj\Debug\TestProject.csproj.AssemblyReference.cache
+C:\Users\ZilasJ\source\repos\DVI\TestProject\obj\Debug\TestProject.csproj.SuggestedBindingRedirects.cache
+C:\Users\ZilasJ\source\repos\DVI\TestProject\obj\Debug\MainWindow.g.cs
+C:\Users\ZilasJ\source\repos\DVI\TestProject\obj\Debug\App.g.cs
+C:\Users\ZilasJ\source\repos\DVI\TestProject\obj\Debug\TestProject_MarkupCompile.cache
+C:\Users\ZilasJ\source\repos\DVI\TestProject\obj\Debug\MainWindow.baml
+C:\Users\ZilasJ\source\repos\DVI\TestProject\obj\Debug\TestProject.g.resources
+C:\Users\ZilasJ\source\repos\DVI\TestProject\obj\Debug\TestProject.Properties.Resources.resources
+C:\Users\ZilasJ\source\repos\DVI\TestProject\obj\Debug\TestProject.csproj.GenerateResource.cache
+C:\Users\ZilasJ\source\repos\DVI\TestProject\obj\Debug\TestProject.csproj.CoreCompileInputs.cache
+C:\Users\ZilasJ\source\repos\DVI\TestProject\obj\Debug\TestProject.exe
+C:\Users\ZilasJ\source\repos\DVI\TestProject\obj\Debug\TestProject.pdb

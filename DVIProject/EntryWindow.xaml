@@ -5,36 +5,18 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:DVI"
         mc:Ignorable="d"
-        Title="EntryWindow" Height="720" Width="1280">
+        Title="EntryWindow" Height="720" Width="1280"
+        FontFamily="Cascadia Mono SemiBold" Background="#272537"
+        Foreground="White">
 
     <Grid>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="20" />
-            <ColumnDefinition Width="auto" />
-            <ColumnDefinition Width="auto" />
-            <ColumnDefinition Width="auto" />
-            <ColumnDefinition Width="*" />
-            <ColumnDefinition Width="20" />
-        </Grid.ColumnDefinitions>
-        <Grid.RowDefinitions>
-            <RowDefinition Height="20" />
-            <RowDefinition Height="auto" />
-            <RowDefinition Height="auto" />
-            <RowDefinition Height="auto" />
-            <RowDefinition Height="auto" />
-            <RowDefinition Height="auto" />
-            <RowDefinition Height="auto" />
-            <RowDefinition Height="*" />
-            <RowDefinition Height="20" />
-        </Grid.RowDefinitions>
+        <TextBlock Text="Home" FontSize="48" Margin="0,0,0,350"
+                   HorizontalAlignment="Center" VerticalAlignment="Center"/>
 
-        <TextBlock Grid.Column="1" Grid.Row="2" Grid.ColumnSpan="1"
-                   Text="Home" FontSize="48" Margin="600, 100, 150, 100"/>
-
-        <Button x:Name="btnLogin" Content="Login" Grid.Column="1" Grid.Row="3" 
-                Margin="450, 0, 0, 80" Height="30" Click="btnHomeLogin_Click"/>
-        <Button x:Name="btnSignup" Content="Sign Up" Grid.Column="1" Grid.Row="3" 
-                Margin="450, 80, 0, 80" Height="30" Click="btnHomeSignup_Click"/>
+        <Button x:Name="mainBtn" Content="Main" 
+                Margin="0,0,0,100" Click="mainBtn_Click"
+                HorizontalAlignment="Center" VerticalAlignment="Center"
+                Width="250" Height="30"/>
     </Grid>
 
 </Window>

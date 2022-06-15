@@ -6,23 +6,133 @@
         xmlns:local="clr-namespace:DVI"
         mc:Ignorable="d"
         Title="MainPanel" Height="720" Width="1280">
+
     <Window.Resources>
         <XmlDataProvider 
             x:Key="DataRss" Source="https://nordjyske.dk/rss/nyheder">
         </XmlDataProvider>
+        <Brush x:Key="Main">#272537</Brush>
+        <Brush x:Key="Time">#181424</Brush>
+        <Brush x:Key="News">#201f2e</Brush>
     </Window.Resources>
 
-    <Grid>
-        <ListBox ItemsSource="{Binding XPath=//item, Source={StaticResource DataRss}}">
-            <ListBox.ItemTemplate>
-                <DataTemplate>
-                    <StackPanel Orientation="Horizontal">
-                        <TextBlock   Text="{Binding XPath=title}" FontWeight="Bold" FontSize="20">
-                        </TextBlock>
-                    </StackPanel>
-                </DataTemplate>
-            </ListBox.ItemTemplate>
-        </ListBox>
-    </Grid>
+    <Grid Background="#201f2e">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="auto" />
+        </Grid.RowDefinitions>
 
+
+        <!-- MIDDLE ROW -->
+        <Grid Grid.Row="1" Background="{StaticResource Main}">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="5" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+
+            <StackPanel Grid.Column="0">
+                <!-- Lager Status -->
+                <TextBlock Text="Lager Status" Foreground="White" HorizontalAlignment="Center" FontSize="24" FontWeight="Bold" />
+                
+                <TextBlock x:Name="StockOverMax"
+                           Text="{Binding StockOverMax}" 
+                           Foreground="White"
+                           Width="200" Height="90"
+                           Margin="0, 100, 0, 0"
+                           Panel.ZIndex="1">
+                </TextBlock>
+                <TextBlock x:Name="StockMostSold"
+                           Text="{Binding StockMostSold}" 
+                           Foreground="White"
+                           Width="200" Height="90"
+                           Margin="0, 100, 0, 0"
+                           Panel.ZIndex="1">
+                </TextBlock>
+                
+            </StackPanel>
+
+
+            <GridSplitter Grid.Column="1" Width="15" Height="500" HorizontalAlignment="Stretch" Background="#201f2e"/>
+
+            
+            <StackPanel Grid.Column="2">
+                <!-- Temperatur og Fugtighed -->
+                <TextBlock Text="Temperatur og Fugtighed" Foreground="White" HorizontalAlignment="Center" FontSize="24" FontWeight="Bold" />
+
+                    <!-- Udenfor -->
+                    <TextBlock Text="Udenfor:" Foreground="White" HorizontalAlignment="Center" FontSize="20" Margin="0, 40, 0, 0"/>
+
+                        <!-- Out Door Humidity -->
+                        <TextBlock x:Name="OutDoorHum"
+                                       Text="{Binding OutDoorH, 
+                                       StringFormat=Fugtighed: {0:#,#.0}}" 
+                                       Foreground="White"
+                                       HorizontalAlignment="Center"
+                                       Margin="0, 20, 0, 0"
+                                       Panel.ZIndex="1">
+                        </TextBlock>
+
+                        <!-- Out Door Temperature -->
+                        <TextBlock x:Name="OutDoorTemp" 
+                                       Text="{Binding OutDoorT, 
+                                       StringFormat=Temperatur: {0:#,#.0}}" 
+                                       Foreground="White"
+                                       HorizontalAlignment="Center"
+                                       Margin="0, 20, 0, 0"
+                                       Panel.ZIndex="1">
+                        </TextBlock>
+
+                    <!-- Lager -->
+                    <TextBlock Text="Lager:" Foreground="White" HorizontalAlignment="Center" FontSize="20" Margin="0, 40, 0, 0"/>
+
+                        <!-- Stock Humidity -->
+                        <TextBlock x:Name="StockHum" 
+                                       Text="{Binding StockH, 
+                               StringFormat=Fugtighed: {0:#,#.0}}" 
+                                       Foreground="White"
+                                       HorizontalAlignment="Center"
+                                       Margin="0, 20, 0, 0"
+                                       Panel.ZIndex="1">
+                        </TextBlock>
+                        <TextBlock Grid.Column="2" x:Name="StockTemp" 
+                                       Text="{Binding StockT, 
+                               StringFormat=Temperatur: {0:#,#.0}}" 
+                                       Foreground="White"
+                                       HorizontalAlignment="Center"
+                                       Margin="0, 20, 0, 0"
+                                       Panel.ZIndex="1">
+                        </TextBlock>
+            </StackPanel>
+        </Grid>
+
+        <!-- BOTTOM ROW -->
+        <Grid Grid.Row="2">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="auto" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="auto" />
+            </Grid.ColumnDefinitions>
+
+            <!-- RSS Label -->
+                <Label 
+                    DataContext="{Binding XPath=//item, Source={StaticResource DataRss}}"
+                    Content="{Binding XPath=title}" FontWeight="Bold"
+                    FontSize="25" Height="50"
+                    HorizontalAlignment="Left"  VerticalAlignment="Bottom"
+                    Foreground="White" Background="{StaticResource News}">
+                </Label>
+            <StackPanel Grid.Column="1" Orientation="Horizontal" HorizontalAlignment="Right">
+                <TextBlock Background="{StaticResource Time}" 
+                           Foreground="White" FontSize="15" FontWeight="Bold"
+                           Text="{Binding Time, 
+                       StringFormat='Time: {0:HH:mm}\ '}" />
+
+                <TextBlock Background="{StaticResource Time}" 
+                           Foreground="White" FontSize="15" FontWeight="Bold"
+                           Text="{Binding CurrentTimeZone}"/>
+            </StackPanel>
+        </Grid>
+    </Grid>
 </Window>

@@ -22,19 +22,11 @@ namespace DVI
             InitializeComponent();
         }
 
-        private void btnHomeLogin_Click(object sender, RoutedEventArgs e)
+        private void mainBtn_Click(object sender, RoutedEventArgs e)
         {
-            UserLogin login = new UserLogin();
-            login.Show();
+            MainPanel main = new MainPanel();
+            main.Show();
             Close();
         }
-
-        private void btnHomeSignup_Click(object sender, RoutedEventArgs e)
-        {
-            UserSignUp signup = new UserSignUp();
-            signup.Show();
-            Close();
-        }
-
     }
 }
